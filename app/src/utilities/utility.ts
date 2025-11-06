@@ -13,7 +13,6 @@ export function enrichDayCountsWithZeroes(dayCounts: GetTotalCountResponseByDay[
             .sort(sortByDate);
 
         counts.forEach((data, index) => {
-            console.log("Adding1 " + data.day);
             enrichedCounts.push(data);
 
             if (index == counts.length - 1) {
@@ -41,7 +40,6 @@ export function enrichDayCountsWithZeroes(dayCounts: GetTotalCountResponseByDay[
                 const prettyDate = nextDay.toISOString().split('T')[0];
 
                 enrichedCounts.push({day: prettyDate, slug: data.slug, target: data.target, count: 0});
-                console.log("Adding2 " + prettyDate);
                 counter++;
                 millisecondsUntilNextDay -= oneDayOfMilliseconds;
             }
