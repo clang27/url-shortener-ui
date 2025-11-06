@@ -1,7 +1,7 @@
 import axios from 'axios';
 import AxiosResponse from 'axios';
-import {GetTotalCountResponse} from "../models/GetTotalCountResponse.ts";
-import {GetTotalCountResponseByDay} from "../models/GetTotalCountByDayResponse.ts";
+import type {GetTotalCountResponse} from "../models/GetTotalCountResponse.ts";
+import type {GetTotalCountResponseByDay} from "../models/GetTotalCountByDayResponse.ts";
 
 
 const api = axios.create({
@@ -15,6 +15,6 @@ export const getShortUrl: (x: string) => Promise<AxiosResponse<string>> = (targe
     return api.put("/api/urls", { targetUrl });
 }
 
-export const getTotalCount: () => Promise<AxiosResponse<GetTotalCountResponse>> = () => api.put("/api/analytics/clicks");
+export const getTotalCount: () => Promise<AxiosResponse<GetTotalCountResponse>> = () => api.get("/api/analytics/clicks");
 
-export const getTotalCountByDay: () => Promise<AxiosResponse<GetTotalCountResponseByDay>> = () => api.put("/api/analytics/clicks/day");
+export const getTotalCountByDay: () => Promise<AxiosResponse<GetTotalCountResponseByDay>> = () => api.get("/api/analytics/clicks/day");

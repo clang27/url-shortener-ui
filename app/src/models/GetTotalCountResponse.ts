@@ -1,3 +1,5 @@
-export class GetTotalCountResponse {
-    constructor(slug: string, target: string, count: number) { }
-}
+export type GetTotalCountResponse = {
+    slug: string;
+    target: string;
+    count: number;
+};

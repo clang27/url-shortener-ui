@@ -4,3 +4,16 @@
   padding: 2rem;
   text-align: center;
 }
+
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 7vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 96px;
+  border-bottom: solid #777777 1px;
+}
